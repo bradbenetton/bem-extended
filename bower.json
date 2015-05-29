@@ -1,8 +1,7 @@
 {
-  "name": "bem-project-stub",
+  "name": "bem-extended",
   "version": "1.0.0",
-  "description": "BEM project stub",
-  "bugs": "https://github.com/bem/project-stub/issues",
+  "description": "BEM extended",
   "ignore": [
     ".bem/cache",
     "node_modules",
