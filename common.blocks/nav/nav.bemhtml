@@ -1,0 +1,24 @@
+block('nav').content()(function() {
+    var result = [];
+    var dis = this;
+    this.ctx.content.forEach(function(elem) {
+        var newElem = elem;
+        newElem.mix = {block: 'nav', elem: elem.block, mods: dis.ctx.mods};
+        result.push({
+            elem: 'item',
+            tag: 'li',
+            mods: dis.ctx.mods,
+            content: newElem
+        });
+    });
+    return result;
+});
+block('nav').content()(function() {
+    var dis = this;
+    return {
+        elem: 'list',
+        tag: 'ul',
+        mods: dis.ctx.mods,
+        content: applyNext()
+    };
+});

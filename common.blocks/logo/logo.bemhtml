@@ -1,26 +1,38 @@
+/* Wrap content in span */
 block('logo').content()(function() {
-    if (!this.ctx.content) return applyNext();
-    return [{
-        elem: 'text',
-        mods: {visible: 'false'},
+    return {
+        block: 'span',
+        mix: [{
+            block: 'logo',
+            elem: 'text',
+            mods: {hidden: true}
+        }],
+        tag: 'span',
         content: applyNext()
-    }];
-
-})
+    };
+});
+/* Add sibling image */
 block('logo').content()(function() {
-    if (!this.ctx.image) return applyNext();
     return [{
-            block: 'link',
-            url: this.ctx.url,
-            content: [{
-                block: 'image',
-                mix: [{
-                    block: 'logo',
-                    elem: 'image'
-                }],
-                url: this.ctx.image
+            block: 'image',
+            url: this.ctx.image,
+            mix: [{
+                block: 'logo',
+                elem: 'image'
             }]
         },
         applyNext()
     ];
+});
+/* Wrap everything in link */
+block('logo').content()(function() {
+    return {
+        block: 'link',
+        mix: [{
+            block: 'logo',
+            elem: 'link'
+        }],
+        url: this.ctx.url,
+        content: applyNext()
+    };
 });
