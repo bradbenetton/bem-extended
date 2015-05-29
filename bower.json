@@ -1,0 +1,22 @@
+{
+  "name": "bem-project-stub",
+  "version": "1.0.0",
+  "description": "BEM project stub",
+  "bugs": "https://github.com/bem/project-stub/issues",
+  "ignore": [
+    ".bem/cache",
+    "node_modules",
+    "libs"
+  ],
+  "dependencies": {
+    "bem-components": "2.1.0",
+    "bem-typography": "verybigman/bem-typography#~1.0.1",
+    "bem-grid": "bem-incubator/bem-grid#~1.2.3"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.4"
+  },
+  "resolutions": {
+    "bem-core": "2.6.0"
+  }
+}

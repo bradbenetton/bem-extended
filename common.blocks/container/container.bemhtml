@@ -1,0 +1,7 @@
+block('container').content()(function() {
+    return {
+        elem: 'inner',
+        elemMods: this.ctx.mods,
+        content: applyNext()
+    };
+});

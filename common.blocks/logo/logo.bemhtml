@@ -1,0 +1,26 @@
+block('logo').content()(function() {
+    if (!this.ctx.content) return applyNext();
+    return [{
+        elem: 'text',
+        mods: {visible: 'false'},
+        content: applyNext()
+    }];
+
+})
+block('logo').content()(function() {
+    if (!this.ctx.image) return applyNext();
+    return [{
+            block: 'link',
+            url: this.ctx.url,
+            content: [{
+                block: 'image',
+                mix: [{
+                    block: 'logo',
+                    elem: 'image'
+                }],
+                url: this.ctx.image
+            }]
+        },
+        applyNext()
+    ];
+});

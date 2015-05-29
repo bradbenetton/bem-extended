@@ -1,0 +1,31 @@
+block('table').tag()('table');
+block('table').def()(function() {
+    var rawTable = this.ctx.content;
+    var newTable = [];
+    rawTable.forEach(function(row) {
+        var newRowContent = [];
+        row.forEach(function(cell) {
+            newRowContent.push({
+                elem: 'cell',
+                tag: 'td',
+                content: cell
+            });
+        })
+        var newRow = {
+            elem: 'row',
+            tag: 'tr',
+            content: newRowContent
+        };
+        console.log('newRow2', newRow);
+        newTable.push(newRow);
+    })
+    this.newTable = newTable;
+    console.log('_table', newTable);
+    return applyCtx({
+        block: 'table-container',
+        content: {
+            block: 'table',
+            content: this.newTable
+        }
+    });
+});
