@@ -1,7 +1,6 @@
 block('fontello').content()(function() {
     function glyphCode(name) {
         var fs = require('fs');
-        var iconv = require('iconv-lite');
         var config = JSON.parse(fs.readFileSync('common.blocks/fontello/fontello-ae58f6b4/config.json'));
         var result;
         config.glyphs.forEach(function(glyph) {
