@@ -10,6 +10,10 @@
         url: '_index.js'
     }],
     content: [{
+        block: 'message',
+        mods: {status: 'success', visible: true},
+        content: 'Success!'
+    }, {
         block: 'container',
         mods: {
             nousebg: 'blue'
