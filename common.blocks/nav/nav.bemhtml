@@ -1,4 +1,4 @@
-block('nav').content()(function() {
+block('nav').match(this.ctx.content).content()(function() {
     var result = [];
     var dis = this;
     this.ctx.content.forEach(function(elem) {
@@ -13,7 +13,7 @@ block('nav').content()(function() {
     });
     return result;
 });
-block('nav').content()(function() {
+block('nav').match(this.ctx.content).content()(function() {
     var dis = this;
     return {
         elem: 'list',
