@@ -16,11 +16,9 @@ block('table').def()(function() {
             tag: 'tr',
             content: newRowContent
         };
-        console.log('newRow2', newRow);
         newTable.push(newRow);
     })
     this.newTable = newTable;
-    console.log('_table', newTable);
     return applyCtx({
         block: 'table-container',
         content: {
